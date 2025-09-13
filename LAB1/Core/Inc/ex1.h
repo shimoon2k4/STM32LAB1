@@ -7,10 +7,11 @@
 
 #ifndef INC_EX1_H_
 #define INC_EX1_H_
+#define INC_EX5_H_
 #include "main.h"
-
 void display7SEG(int num);
-void ex4_run();
+void reset_and_change_states();
+void ex5_run();
 
 
 #endif /* INC_EX1_H_ */

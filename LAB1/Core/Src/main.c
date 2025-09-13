@@ -94,7 +94,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  ex4_run();
+	  ex5_run();
 	  HAL_Delay(2000);
     /* USER CODE BEGIN 3 */
   }
@@ -150,12 +150,18 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_A_Pin|LED_B_Pin|LED_C_Pin|LED_D_Pin
-                          |LED_E_Pin|LED_F_Pin|LED_G_Pin, GPIO_PIN_RESET);
+                          |LED_E_Pin|LED_F_Pin|LED_G_Pin|LED_RED_NS_Pin
+                          |LED_YELLOW_NS_Pin|LED_GREEN_NS_Pin|LED_RED_EW_Pin|LED_YELLOW_EW_Pin
+                          |LED_GREEN_EW_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_A_Pin LED_B_Pin LED_C_Pin LED_D_Pin
-                           LED_E_Pin LED_F_Pin _LED_G_Pin */
+                           LED_E_Pin LED_F_Pin LED_G_Pin LED_RED_NS_Pin
+                           LED_YELLOW_NS_Pin LED_GREEN_NS_Pin LED_RED_EW_Pin LED_YELLOW_EW_Pin
+                           LED_GREEN_EW_Pin */
   GPIO_InitStruct.Pin = LED_A_Pin|LED_B_Pin|LED_C_Pin|LED_D_Pin
-                          |LED_E_Pin|LED_F_Pin|LED_G_Pin;
+                          |LED_E_Pin|LED_F_Pin|LED_G_Pin|LED_RED_NS_Pin
+                          |LED_YELLOW_NS_Pin|LED_GREEN_NS_Pin|LED_RED_EW_Pin|LED_YELLOW_EW_Pin
+                          |LED_GREEN_EW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
