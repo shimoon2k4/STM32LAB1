@@ -7,7 +7,10 @@
 
 #ifndef INC_EX1_H_
 #define INC_EX1_H_
+#include "main.h"
 
+void reset_and_change_states();
+void ex2_run();
 
 
 #endif /* INC_EX1_H_ */
