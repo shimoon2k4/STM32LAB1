@@ -1,2 +1,2 @@
 ex1.c:12:6:reset_and_change_states	4	static
-ex1.c:26:6:ex2_run	8	static
+ex1.c:23:6:ex3_run	8	static

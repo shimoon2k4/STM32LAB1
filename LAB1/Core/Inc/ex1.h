@@ -10,7 +10,7 @@
 #include "main.h"
 
 void reset_and_change_states();
-void ex2_run();
+void ex3_run();
 
 
 #endif /* INC_EX1_H_ */
