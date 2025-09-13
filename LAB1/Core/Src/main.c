@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "ex1.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -93,6 +93,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  ex1_run();
+	  	 HAL_Delay(2000);
     /* USER CODE END WHILE */
 //TODO EX1
     /* USER CODE BEGIN 3 */
