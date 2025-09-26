@@ -9,8 +9,8 @@
 #define INC_EX1_H_
 #include "main.h"
 
-void reset_and_change_states();
-void ex2_run();
+void reset_state();
+void ex6_run();
 
 
 #endif /* INC_EX1_H_ */

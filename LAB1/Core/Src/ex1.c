@@ -5,45 +5,42 @@
  *      Author: Lenovo
  */
 #include "ex1.h"
-int count_red = 5,
-    count_green = 3,
-    count_yellow = 2,
-    status = 1;
-void reset_and_change_states(){
-	if(count_red == 0){
-		count_red = 5;
-		status = 2;
-	}
-	if(count_yellow == 0){
-			count_yellow = 2;
-			status = 3;
-	}
-	if(count_green == 0){
-			count_green = 3;
-			status = 1;
-	}
-}
-void ex2_run(){
-	switch (status) {
-	case 1:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-	    HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
-	    HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	    --count_red;
-	    break;
-	case 2:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-		--count_yellow;
-		break;
-	case 3:
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
-		--count_green;
-	}
-	reset_and_change_states();
-}
+int status = 0;
+uint16_t LED[12] =
+{
+	GPIO_PIN_4,
+	GPIO_PIN_5,
+	GPIO_PIN_6,
+	GPIO_PIN_7,
+	GPIO_PIN_8,
+	GPIO_PIN_9,
+	GPIO_PIN_10,
+	GPIO_PIN_11,
+	GPIO_PIN_12,
+	GPIO_PIN_13,
+	GPIO_PIN_14,
+	GPIO_PIN_15
 
+};
+void reset_state()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14 , SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15 , SET);
+}
+void ex6_run(){
+	reset_state();
+	HAL_GPIO_WritePin(GPIOA, LED[status], RESET);
+	int change = (status < 11) ? ++status : 0;
+	status = change;
+}
 
