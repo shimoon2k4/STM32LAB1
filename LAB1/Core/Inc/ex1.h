@@ -10,7 +10,8 @@
 #include "main.h"
 
 void clearAllClock();
-void ex7_run();
+void setNumberOnClock(int num);
+void ex8_run();
 
 
 #endif /* INC_EX1_H_ */
