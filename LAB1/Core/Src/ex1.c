@@ -5,7 +5,9 @@
  *      Author: Lenovo
  */
 #include "ex1.h"
-int status = 0;
+int hour = 0,
+	minute = 0,
+	second = 0;
 uint16_t LED[12] =
 {
 	GPIO_PIN_4,
@@ -45,10 +47,25 @@ void clearNumberOnClock(int num)
 {
 	HAL_GPIO_WritePin(GPIOA, LED[num], SET);
 }
-void ex9_run(){
-	clearAllClock();
-	setNumberOnClock(status);
-	int change = (status < 11) ? ++status : 0;
-	status = change;
+void ex10_run(){
+	if (second >= 60)
+		{
+			second = 0;
+			minute++;
+		}
+		if (minute >= 60)
+		{
+			minute = 0;
+			hour++;
+		}
+		if (hour >= 12)
+		{
+			hour = 0;
+		}
+		clearAllClock();
+		setNumberOnClock(hour);
+		setNumberOnClock(minute/5);
+		setNumberOnClock(second/5);
+		second++;
 }
 
