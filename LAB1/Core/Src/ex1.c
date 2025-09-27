@@ -39,9 +39,13 @@ void clearAllClock()
 }
 void setNumberOnClock(int num)
 {
-	HAL_GPIO_WritePin(GPIOA, LED[num], GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOA, LED[num], RESET);
 }
-void ex8_run(){
+void clearNumberOnClock(int num)
+{
+	HAL_GPIO_WritePin(GPIOA, LED[num], SET);
+}
+void ex9_run(){
 	clearAllClock();
 	setNumberOnClock(status);
 	int change = (status < 11) ? ++status : 0;

@@ -11,7 +11,8 @@
 
 void clearAllClock();
 void setNumberOnClock(int num);
-void ex8_run();
+void clearNumberOnClock(int num);
+void ex9_run();
 
 
 #endif /* INC_EX1_H_ */
