@@ -1,2 +1,2 @@
-ex1.c:25:6:reset_state	8	static
-ex1.c:40:6:ex6_run	16	static
+ex1.c:25:6:clearAllClock	8	static
+ex1.c:40:6:ex7_run	16	static

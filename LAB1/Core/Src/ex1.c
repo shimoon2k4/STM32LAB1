@@ -22,7 +22,7 @@ uint16_t LED[12] =
 	GPIO_PIN_15
 
 };
-void reset_state()
+void clearAllClock()
 {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4 , SET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5 , SET);
@@ -37,8 +37,8 @@ void reset_state()
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14 , SET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15 , SET);
 }
-void ex6_run(){
-	reset_state();
+void ex7_run(){
+	clearAllClock();
 	HAL_GPIO_WritePin(GPIOA, LED[status], RESET);
 	int change = (status < 11) ? ++status : 0;
 	status = change;
