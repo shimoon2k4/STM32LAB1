@@ -5,12 +5,12 @@
  *      Author: Lenovo
  */
 
-#ifndef INC_EX1_H_
-#define INC_EX1_H_
+#ifndef INC_EX2_H_
+#define INC_EX2_H_
 #include "main.h"
 
 void reset_and_change_states();
 void ex2_run();
 
 
-#endif /* INC_EX1_H_ */
+#endif /* INC_EX2_H_ */

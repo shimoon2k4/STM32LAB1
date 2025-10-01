@@ -4,7 +4,7 @@
  *  Created on: Sep 13, 2025
  *      Author: Lenovo
  */
-#include "ex1.h"
+#include <ex2.h>
 int count_red = 5,
     count_green = 3,
     count_yellow = 2,

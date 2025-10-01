@@ -77,7 +77,7 @@ Disassembly of section .text:
  8000148:	08001270 	.word	0x08001270
 
 0800014c <reset_and_change_states>:
-#include "ex1.h"
+#include <ex2.h>
 int count_red = 5,
     count_green = 3,
     count_yellow = 2,
